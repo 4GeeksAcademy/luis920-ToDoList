@@ -1,12 +1,26 @@
 
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.container{
+   
+  
+}
+ul{
+    padding: 0;
+}
 
-*/
+ul li{
+    border: 1px solid rgb(118, 122, 113);
+    list-style: none;
+    width: 500px;
+    padding: 5px;
+   
+    
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 100%;
+    border: none;
+
+}
