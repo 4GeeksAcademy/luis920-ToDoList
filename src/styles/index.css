@@ -1,11 +1,17 @@
 
 
-.container{
+#app{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
+    
    
   
 }
 ul{
     padding: 0;
+    align-items: center;
 }
 
 ul li{
@@ -13,14 +19,28 @@ ul li{
     list-style: none;
     width: 500px;
     padding: 5px;
+    
    
     
 }
 h1{
-    text-align: center;
+text-align: center;
+font-size: 80px;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 input{
     width: 100%;
     border: none;
 
+
+}
+.icon{
+    float: right; 
+    margin-left: 15px; 
+    display: none;
+    
+}
+li:hover .icon{
+    display: inline;
 }
