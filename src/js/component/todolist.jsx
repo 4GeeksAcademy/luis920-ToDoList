@@ -32,20 +32,22 @@ export const Todolist = () => {
               }}
               placeholder="Agregar tarea" 
             />
-            
-            </li>
-          {tareas.map((tarea, index) => (
-            <li key={index}>
-              {tarea}
-            <span>
-              <i 
-                className="icon fa-solid fa-trash" 
-                onClick={() => eliminarTarea(index)}
-              ></i>
-            </span>
-              
-            </li>
-          ))}
+          </li>
+          {tareas.length === 0 ? (
+            <li>No hay tareas añadidas</li>
+          ) : (
+            tareas.map((tarea, index) => (
+              <li key={index}>
+                {tarea}
+                <span>
+                  <i 
+                    className="icon fa-solid fa-trash" 
+                    onClick={() => eliminarTarea(index)}
+                  ></i>
+                </span>
+              </li>
+            ))
+          )}
         </ul>
         <div>{tareas.length} tareas</div>
       </div>
