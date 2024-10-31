@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import {Todolist} from "./todolist.jsx";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import {Todolist} from "./todolist.jsx"; 
+
 
 
 
