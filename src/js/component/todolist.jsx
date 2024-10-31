@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export const Todolist = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [lista, setLista] = useState("");
   const [tareas, setTareas] = useState([]);
 
   const agregarTarea = () => {
-    if (inputValue.trim() !== "") {
-      setTareas([...tareas, inputValue]);
-      setInputValue(""); 
+    if (lista.trim() !== "") {
+      setTareas([...tareas, lista]);
+      setLista(""); 
     }
   };
 
@@ -17,14 +19,14 @@ export const Todolist = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="paper">
         <h1>Todos</h1>
         <ul>
           <li className="li-input">
             <input 
               type="text" 
-              onChange={(e) => setInputValue(e.target.value)}
-              value={inputValue}
+              onChange={(e) => setLista(e.target.value)}
+              value={lista}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   agregarTarea();
@@ -36,14 +38,11 @@ export const Todolist = () => {
           {tareas.length === 0 ? (
             <li>No hay tareas añadidas</li>
           ) : (
-            tareas.map((tarea, index) => (
+            tareas.map((item, index) => (
               <li key={index}>
-                {tarea}
-                <span>
-                  <i 
-                    className="icon fa-solid fa-trash" 
-                    onClick={() => eliminarTarea(index)}
-                  ></i>
+                {item}
+                <span onClick={() => eliminarTarea(index)}>
+                  <FontAwesomeIcon  className="icon" icon={faTrash} />
                 </span>
               </li>
             ))
